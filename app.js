@@ -59,36 +59,14 @@ app.post('/user', (req, res) => {
   const body = _.pick(req.body, ['name', 'email', 'phone', 'comment']);
   const user = new User(body);
 
-  const transport = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL,
-      pass: process.env.PASS
-    },
-    tls: {rejectUnauthorized: false}
-  });
-
-  const mailOptions = {
-    from: process.env.EMAIL,
-    to: 'ericpratt86@gmail.com',
-    subject: 'New Lead!',
-    html: `New contact information: <h1>Name: ${user.name},</h1> <h1>Email: ${user.email},</h1> <h1>Phone: ${user.phone},</h1> <h1>Comment: ${user.comment}</h1>`
-  };
 
   user.save((err) => {
     if (err) {
       req.flash('error', 'Oops! Something went wrong with your request.');
+      res.redirect('/');
     } else {
-      transport.sendMail(mailOptions, function (err, info) {
-        if (err) {
-          req.flash('error', 'Oops! Something went wrong with your request.');
-          res.redirect('/');
-          console.log(err);
-        } else {
-          req.flash('success', 'Your message has been sent.');
-          res.redirect('/');
-        }
-      });
+      req.flash('success', 'Your message has been sent.');
+      res.redirect('/');
     }
   });
 });

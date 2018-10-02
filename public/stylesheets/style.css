@@ -116,10 +116,13 @@ li {
  /* Extra small devices (portrait phones, less than 576px) */
 @media all and (max-width: 575.98px) {
   .carousel {
-    margin-top: 175px;
+    margin-top: 173px;
   }
   .carousel-inner {
     height: 200px;
+  }
+  .estimate {
+    margin: 1rem;
   }
   .link {
     font-size: 1rem;
