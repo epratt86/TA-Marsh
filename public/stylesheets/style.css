@@ -2,12 +2,28 @@
   font-family: 'Roboto Slab', serif;
 }
 
+a:hover {
+  color: #c8d0d8;
+  text-decoration: none;
+}
+
 address {
   text-align: right;
 }
 
 body {
   padding-top: 7rem;
+}
+
+li {
+  display: inline;
+  margin: 0;
+}
+
+.buttons {
+  background-color: #d82626;
+  border-color: #710417;
+  color: white;
 }
 
 .carousel-control-prev-icon {
@@ -27,7 +43,7 @@ body {
 }
 
 .estimate {
-  background-color: #d0ddf2;
+  background-color: #fff581;
   text-align: center;
   margin-top: 1em;
 }
@@ -44,12 +60,19 @@ body {
 }
 
 .footer {
+  background-color: #084c92;
   bottom: 0;
   width: 100%;
 }
 
+.link {
+  color: white;
+  font-size: 1.75rem;
+  padding: 0 1rem;
+}
+
 .main-content {
-  padding-top: 5rem;
+  padding-top: 2rem;
   position: relative;
   min-height: 80vh;
   padding-bottom: 2.5rem;
@@ -59,8 +82,15 @@ body {
   float: right;
 }
 
-.nav-link {
-  font-size: 1.75rem;
+.navbar {
+  background-color: #084c92;
+}
+
+.navbar-nav {
+  padding-top: 8rem;
+}
+.navbar-toggler {
+  background-color: #f7594c;
 }
 
 .resize-img {
@@ -81,4 +111,61 @@ body {
 
 #map {
   width: 100%;
+}
+
+ /* Extra small devices (portrait phones, less than 576px) */
+@media all and (max-width: 575.98px) {
+  .carousel {
+    margin-top: 175px;
+  }
+  .carousel-inner {
+    height: 200px;
+  }
+  .link {
+    font-size: 1rem;
+    padding: 0 .5rem;
+  }
+  #logo {
+    max-width: 100%;
+  }
+  .main-content {
+    padding-top: 200px;
+  }
+  #map {
+    padding-top: 2rem;
+  }
+  .navbar {
+    min-height: 350px;
+    position: absolute;
+  }
+  .navbar-brand {
+    margin-right: 0;
+    padding-top: 1rem;
+  }
+  .options {
+    margin-top: 7rem;
+    padding: 0;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .options {
+    padding-top: 7rem;
+  }
 }
