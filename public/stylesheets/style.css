@@ -11,8 +11,8 @@ address {
   text-align: right;
 }
 
-body {
-  padding-top: 7rem;
+.alert {
+  margin-bottom: 0;
 }
 
 li {
@@ -54,10 +54,13 @@ li {
 }
 
 .flash {
+  display: contents;
   padding-top: 5em;
+  position: relative;
   margin-bottom: -1rem;
   text-align: center;
 }
+
 
 .footer {
   background-color: #084c92;
@@ -84,6 +87,7 @@ li {
 
 .navbar {
   background-color: #084c92;
+  padding: 0;
 }
 
 .navbar-nav {
@@ -115,14 +119,20 @@ li {
 
  /* Extra small devices (portrait phones, less than 576px) */
 @media all and (max-width: 575.98px) {
-  .carousel {
-    margin-top: 173px;
+  .alert {
+    padding: 0;
   }
   .carousel-inner {
     height: 200px;
   }
+  .container {
+    justify-content: center!important;
+  }
   .estimate {
     margin: 1rem;
+  }
+  .flash {
+    margin-bottom: 100px;
   }
   .link {
     font-size: 1rem;
@@ -131,15 +141,11 @@ li {
   #logo {
     max-width: 100%;
   }
-  .main-content {
-    padding-top: 200px;
-  }
   #map {
     padding-top: 2rem;
   }
   .navbar {
     min-height: 350px;
-    position: absolute;
   }
   .navbar-brand {
     margin-right: 0;
@@ -147,18 +153,24 @@ li {
   }
   .options {
     margin-top: 7rem;
-    padding: 0;
+  }
+  ul {
+    margin-left: -2.2rem;
   }
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-
+@media (min-width: 576px) and (max-width: 813) {
+  .navbar {
+    position: absolute;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-
+  .container {
+    justify-content: center!important;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
